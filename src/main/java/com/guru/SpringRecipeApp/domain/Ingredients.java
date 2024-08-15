@@ -1,13 +1,17 @@
 package com.guru.SpringRecipeApp.domain;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Ingredients {
     private String description;;
@@ -22,4 +26,7 @@ public class Ingredients {
     @OneToOne(fetch = FetchType.EAGER)
     private UOM uom;
 
+    public Ingredients(String ripeAvocados, BigDecimal bigDecimal, UOM eachUom, Recipe guacRecipe) {
+
+    }
 }

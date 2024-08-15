@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Getter
@@ -24,7 +25,7 @@ public class Recipe {
     //todo add
 
     @OneToMany(cascade = CascadeType.ALL , mappedBy = "recipe")
-    private Set<Ingredients> ingredients ;
+    private Set<Ingredients> ingredients = new HashSet<>();
 
     @Lob
     private Byte[] image;
